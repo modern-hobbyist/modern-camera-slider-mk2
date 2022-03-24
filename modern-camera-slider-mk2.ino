@@ -202,8 +202,6 @@ void pauseSlider(){
 void endstopClick(Button2& btn) {
   Serial.println("Button clicked");
   endstopPressed(btn);
-  
-  calculateSpeed();
 }
 
 void endstopPressed(Button2& btn) {
@@ -215,6 +213,7 @@ void endstopPressed(Button2& btn) {
   } else if (btn == maxEndStop) {
     reverseDirection = true;
   }
+  calculateSpeed();
 }
 
 void endstopReleased(Button2& btn) {
